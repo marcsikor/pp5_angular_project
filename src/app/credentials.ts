@@ -1,0 +1,1 @@
+export const credentials = [ 'test@test.com', 'test123' ]

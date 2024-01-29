@@ -22,7 +22,6 @@ export class SignInComponent {
   ) {}
 
   onSubmit(): void {
-    // Process checkout data here
 
     this.signInStatusService.getUserCredentials(this.signInForm.get('username')?.value!, this.signInForm.get('password')?.value!);
     if(this.signInStatusService.checkCurrentCredentials()){

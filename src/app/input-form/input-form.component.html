@@ -1,15 +1,13 @@
-<form>
+<form #f="ngForm" (ngSubmit)="onSubmitTransaction()">
+  
   <div class="form-group">
-    <label for="exampleFormControlFile1">Example file input</label>
-    <input type="file" class="form-control" id="exampleFormControlFile1">
+    <label for="exampleFormControlInput1">Transaction name</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="name" [(ngModel)]="transaction.name">
   </div>
+  
   <div class="form-group">
-    <label for="exampleFormControlInput1">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
-    <select class="form-select" id="exampleFormControlSelect1">
+    <label for="exampleFormControlSelect1">Transaction type</label>
+    <select class="form-select" id="exampleFormControlSelect1" name="type" [(ngModel)]="transaction.type">
       <option>1</option>
       <option>2</option>
       <option>3</option>
@@ -17,12 +15,24 @@
       <option>5</option>
     </select>
   </div>
+  
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Transaction description</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="description" [(ngModel)]="transaction.description">
+  </div>
+  
+
   <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
-  <label class="btn btn-outline-info" for="option1">Checked</label>
+  <label class="btn btn-outline-info" for="option1">Cash</label>
   <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-  <label class="btn btn-outline-info" for="option2">Radio</label>
+  <label class="btn btn-outline-info" for="option2">Bank transfer</label>
   <input type="date" class="form-control" id="exampleDateFormControlInput1" placeholder="dd.mm.yyyy">
   
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Example file input</label>
+    <input type="file" class="form-control" id="exampleFormControlFile1">
+  </div>
+
   <div class="input-group mb-3">
     <span class="input-group-text">$</span>
     <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
@@ -31,3 +41,4 @@
   <button class="btn btn-primary" type="submit">Submit form</button>
   <button class="btn btn-primary" type="reset">Reset form</button>
 </form>
+<p>transaction: {{transaction|json}}</p>

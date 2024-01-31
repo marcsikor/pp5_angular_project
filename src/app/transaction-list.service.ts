@@ -27,4 +27,14 @@ export class TransactionListService {
     const targetIndex = this.transactionList.findIndex(object => {return object.id === id});
     return this.transactionList[targetIndex];
   }
+  getSumOfTransactions(){
+    let sum: number = 0;
+    const amounts: number[] = this.transactionList.map(a => a.amount);
+    if (this.transactionList.length != 0) {
+      for (let i = 0; i < amounts.length; i++ ) {
+        sum += parseFloat(amounts[i].toString()); // don't want to know ;_;
+      }
+    }
+    return sum;
+  }
 }

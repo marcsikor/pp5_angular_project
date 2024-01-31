@@ -10,10 +10,21 @@ export class TransactionListService {
   constructor() { }
 
   addTransaction(transaction: Transaction){
+    transaction.id = this.getNewId();
     this.transactionList.push(transaction);
   }
   getTransactionList():Transaction[]{
     return this.transactionList;
   }
-
+  private getNewId(){
+    return this.transactionList.length != 0 ? Math.max(...this.transactionList.map(a => a.id)) + 1 : 1;
+  }
+  deleteTransaction(id: number){
+    const targetIndex = this.transactionList.findIndex(object => {return object.id === id});
+    this.transactionList.splice(targetIndex,1);
+  }
+  getTransactionById(id: number){
+    const targetIndex = this.transactionList.findIndex(object => {return object.id === id});
+    return this.transactionList[targetIndex];
+  }
 }

@@ -11,6 +11,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { TransactionHistoryComponent } from './transaction-history/transaction-history.component';
 import { ClaimItemizationComponent } from './claim-itemization/claim-itemization.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { TransactionDetailsComponent } from './transaction-details/transaction-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
     LandingPageComponent,
     TransactionHistoryComponent,
     ClaimItemizationComponent,
-    SignInComponent
+    SignInComponent,
+    TransactionDetailsComponent
   ],
   imports: [
     BrowserModule,

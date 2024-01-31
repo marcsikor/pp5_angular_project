@@ -1,1 +1,14 @@
-<p>transaction-history works!</p>
+<div id="transaction-list">
+    <ul class="list-group" id="customer-list">
+        <li *ngFor="let transaction of transactionList">
+            {{transaction.getTransaction()}}
+            <!-- button for transaction deletion -->
+            <button type="button" class="btn btn-primary" (click)="deleteTransaction(transaction.id)">Delete transaction</button> 
+            <!-- button for viewing details of a transaction -->
+            <button type="button" class="btn btn-primary" [routerLink]="['/details', transaction.id]">View transaction details</button> 
+            <!-- button for sending transaction for approval
+            <button type="button" class="btn btn-primary">send for approval</button> -->
+        </li>
+    </ul>
+    <button type="button" class="btn btn-primary" [routerLink] = "['/new']"> Add new transaction </button>
+</div>

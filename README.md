@@ -1,27 +1,21 @@
 # MoneySettlingApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7.
+Projekt to przykładowy front-end aplikacji do rozliczania wydatków pracowniczych. Składa się z prostego systemu logowania, rejestrowania transakcji do rozliczenia, dostępu do historii transakcji oraz do sumy zgłoszonych pieniędzy w podziale na waluty.
+***
+Obecnie aplikacja nie posiada żadnego systemu do zakładania konta. Wbudowane dane dostępu, które należy wpisać w ekranie logowania, to:
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+|username|password|
+|---|---|
+|`test@test.com`|`test123`|
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+***
+Aby uruchomić projekt należy wykonać poniższe komendy:
+```
+git clone https://github.com/marcsikor/pp5_angular_project
+cd pp5_angular_project
+npm install
+ng s
+```
+Następnie należy wpisać odpowiedni adres do przeglądarki, przykładowo 
+`http://localhost:4200/`

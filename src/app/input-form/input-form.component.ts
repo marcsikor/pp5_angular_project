@@ -4,29 +4,31 @@ import { Component } from '@angular/core';
 import { TransactionListService } from '../transaction-list.service';
 import { Transaction } from '../transaction-model';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-input-form',
   templateUrl: './input-form.component.html',
   styleUrl: './input-form.component.scss'
 })
-export class InputFormComponent {
+export class InputFormComponent{
   transaction: Transaction = new Transaction();
-  
-  // transactionInput = new FormGroup({
-  //   name: new FormControl(''),
-  //   type: new FormControl(''),
-  //   description: new FormControl('')
-  // });
-  
+
   constructor(
     private TransactionListService: TransactionListService,
     private router: Router
-  ) {}
+    ) {}
+
+  getFile($event: any){
+    this.transaction.file = $event.target.files[0];
+  }
   
-  onSubmitTransaction(): void{
+  onSubmitTransaction(f: NgForm): void{
+    if (f.invalid) {
+      return;
+    }
+    this.transaction.amount =  Math.round((this.transaction.amount + Number.EPSILON) * 100) / 100
     this.TransactionListService.addTransaction(this.transaction)
-    // console.log(this.transaction.name)
     this.router.navigateByUrl("/history");
   }
 }

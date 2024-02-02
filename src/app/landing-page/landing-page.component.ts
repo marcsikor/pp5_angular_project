@@ -8,7 +8,9 @@ import { TransactionListService } from '../transaction-list.service';
   styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent {
-  transactionSum: number = this.TransactionListService.getSumOfTransactions();
+  transactionSumEUR: number = this.TransactionListService.getSumOfTransactions("EUR");
+  transactionSumPLN: number = this.TransactionListService.getSumOfTransactions("PLN");
+  transactionSumUSD: number = this.TransactionListService.getSumOfTransactions("USD");
 
   constructor(
     private TransactionListService: TransactionListService

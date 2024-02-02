@@ -1,3 +1,35 @@
-<button type="button" class="btn btn-outline-info" [routerLink]="['/new']">Register new transaction</button>
-<button type="button" class="btn btn-outline-info" [routerLink]="['/history']">View registered transactions</button>
-<p>Your current balance: {{transactionSum}}</p>
+<h3 id="landing-title">Money Settling Application</h3>
+<p id="par-info">You can register new transactions or preview ones already registered using below buttons</p>
+<div class="button-box col-lg-12">
+  <button type="button" class="btn btn-outline-info" [routerLink]="['/new']">Register new transaction</button>
+  <button type="button" class="btn btn-outline-info" [routerLink]="['/history']">View registered transactions</button>
+</div>
+<p id="balance">Below you can view your current balance: </p>
+
+<div class="container">
+  <div class="row align-items-start">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">EUR balance</h5>
+          <h4 class="card-text">{{transactionSumEUR}}</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">PLN balance</h5>
+          <h4 class="card-text">{{transactionSumPLN}}</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">USD balance</h5>
+          <h4 class="card-text">{{transactionSumUSD}}</h4>
+        </div>
+      </div>
+    </div>
+  </div>

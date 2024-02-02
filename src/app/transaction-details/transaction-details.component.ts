@@ -10,6 +10,7 @@ import { TransactionListService } from '../transaction-list.service';
 })
 export class TransactionDetailsComponent {
   data: any;
+  image: string = "";
   transaction!: Transaction;
   
   constructor(
@@ -22,7 +23,6 @@ export class TransactionDetailsComponent {
   loadData() {
     this.activatedRoute.paramMap.subscribe(params => {
       this.data = params.get('id');
-      // console.log(typeof this.data);
       this.transaction = this.TransactionListService.getTransactionById(parseInt(this.data));
     });
   }

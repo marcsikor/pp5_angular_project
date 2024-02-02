@@ -1,20 +1,13 @@
-import { NgOptimizedImage } from "@angular/common";
-
 export class Transaction {
     constructor(){}
 
-    //work to do
-    id: number = 0; //unique id
-    name: string = "";
-    // type: string = "";
+    id!: number; //unique id
+    name!: string;
     description: string = "";
     withCash: boolean = true;
-    image: string = "";
-    currency: string = "";
-    date: Date = new Date();
-    amount: number = 0;
+    file: Blob | null = null;
+    currency!: string;
+    date!: Date;
+    amount!: number;
 
-    getTransaction():string {
-        return `${this.id} ${this.name} ${this.description}`; //${this.houseNumber}`;
-    }
 }

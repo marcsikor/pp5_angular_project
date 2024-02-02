@@ -1,3 +1,4 @@
+<p>Sign in to application before entering this page</p>
 <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="email">Email address</label>
@@ -5,7 +6,8 @@
     </div>
     <div class="form-group">
       <label for="password">Password</label>
-      <input type="password" class="form-control" id="password" name='password' formControlName="password" placeholder="Password" required>
+      <input type="password" class="form-control" id="password" name='password' formControlName="password" placeholder="Password" required validate>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <p>{{errorMessage}}</p>
+    <button type="submit" class="btn btn-outline-info">Submit</button>
   </form>

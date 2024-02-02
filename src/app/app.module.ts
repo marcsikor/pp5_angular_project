@@ -9,7 +9,6 @@ import { InputFormComponent } from './input-form/input-form.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { TransactionHistoryComponent } from './transaction-history/transaction-history.component';
-import { ClaimItemizationComponent } from './claim-itemization/claim-itemization.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { TransactionDetailsComponent } from './transaction-details/transaction-details.component';
 
@@ -20,7 +19,6 @@ import { TransactionDetailsComponent } from './transaction-details/transaction-d
     TopBarComponent,
     LandingPageComponent,
     TransactionHistoryComponent,
-    ClaimItemizationComponent,
     SignInComponent,
     TransactionDetailsComponent
   ],

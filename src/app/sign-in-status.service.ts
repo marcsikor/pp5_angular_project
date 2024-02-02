@@ -10,9 +10,14 @@ export class SignInStatusService {
 
   constructor() { }
 
-  getUserCredentials(username: string, password: string){
+  setUserCredentials(username: string, password: string){
     this.username = username;
     this.password = password;
+  }
+
+  resetUserCredentials(){
+    this.username = '';
+    this.password = '';
   }
 
   checkCurrentCredentials(){

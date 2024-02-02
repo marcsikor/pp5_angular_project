@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrl: './sign-in.component.scss'
 })
 export class SignInComponent {
+  errorMessage: string = '';
+
   signInForm = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
@@ -23,12 +25,13 @@ export class SignInComponent {
 
   onSubmit(): void {
 
-    this.signInStatusService.getUserCredentials(this.signInForm.get('username')?.value!, this.signInForm.get('password')?.value!);
+    this.signInStatusService.setUserCredentials(this.signInForm.get('username')?.value!, this.signInForm.get('password')?.value!);
     if(this.signInStatusService.checkCurrentCredentials()){
       console.log('Sign in successful!');
       this.router.navigateByUrl("");
     }
     else {
+      this.errorMessage = 'Sign in failed! Email or password might be wrong'
       console.error('Sign in failed!')
     }
   }

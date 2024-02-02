@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { SignInStatusService } from '../sign-in-status.service';
+import { TransactionListService } from '../transaction-list.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-bar',
@@ -9,7 +11,9 @@ import { SignInStatusService } from '../sign-in-status.service';
 export class TopBarComponent {
 
   constructor(
-    private signInStatusService: SignInStatusService
+    private signInStatusService: SignInStatusService,
+    private transactionListService: TransactionListService,
+    private router: Router
   ){}
 
   checkCurrentUser(){
@@ -18,6 +22,8 @@ export class TopBarComponent {
 
   logOut(){
     this.signInStatusService.resetUserCredentials();
+    this.transactionListService.deleteAllTransactions();
+    this.router.navigateByUrl("");
     alert("You have been signed out successfully");
   }
 }

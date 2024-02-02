@@ -32,6 +32,10 @@ export class TransactionListService {
     return this.transactionList[targetIndex];
   }
 
+  deleteAllTransactions(){
+    this.transactionList = [];
+  }
+
   getSumOfTransactions(currency: string){
     let sum: number = 0;
     const amounts: number[] = this.transactionList.filter((a) => a.currency==currency).map(a => a.amount);
